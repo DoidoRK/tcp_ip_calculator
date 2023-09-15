@@ -46,11 +46,11 @@ int main()
 
         /*Waits for connections */
         listen(sock,5);
-        cout << "Servidor aguardando!! "<< endl;
-        s1 = accept(sock,(struct sockaddr *)0,(socklen_t *)0);
-        s0 = accept(sock,(struct sockaddr *)0,(socklen_t *)0);
         while (1) {
+                cout << "Servidor aguardando!! "<< endl;
+                s0 = accept(sock,(struct sockaddr *)0,(socklen_t *)0);
                 rval = recv(s0, &op, sizeof(struct operation), 0);  
+                s1 = accept(sock,(struct sockaddr *)0,(socklen_t *)0);
                 cout << "Pedido recebido!! "<< endl;
                 switch (op.oper) {
                         case 1:

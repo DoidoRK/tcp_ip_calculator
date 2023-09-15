@@ -69,8 +69,8 @@ int main() {
         cin >> op.oper;
         cout << "Solicitando servico ao servidor "<< endl;
         rval = send(s0, &op, sizeof(struct operation), 0);
-        cout << "Recebido resultado do servidor "<< endl;
         rval = recv(s1, &op, sizeof(struct operation), 0);
+        cout << "Recebido resultado do servidor "<< endl;
 
         switch (op.oper) {
                 case 1:
